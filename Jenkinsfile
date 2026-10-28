@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "chaithracs/app"
+        DOCKER_IMAGE = "chaithracs/c"
     }
 
     stages {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/chaithracs/app3.git'
+                    url: 'https://github.com/chaithracs944-ops/app3.git'
             }
         }
 
