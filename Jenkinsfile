@@ -15,14 +15,14 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t %DOCKER_IMAGE%:latest .'
+                bat  'docker build -t %DOCKER_IMAGE%:latest .'
             }
         }
 
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(
-                    credentialsId: 'dockerhub-creds1',
+                    credentialsId: 'dockerhub-PAT',
                     variable: 'DOCKER_PAT'
                 )]) {
                     bat '''
